@@ -1,0 +1,63 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /mercedes/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /mercedes/index.php [L]
+</IfModule>
+
+# END WordPress
+
+Options +FollowSymLinks -Indexes
+
+RewriteCond %{QUERY_STRING} (&lt;|%3C)([^s]*s)+cript.*(&gt;|%3E) [NC,OR]
+
+RewriteCond %{QUERY_STRING} GLOBALS (=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST (=|\[|\%[0-9A-Z]{0,2})
+
+RewriteCond %{query_string} concat.*\( [NC,OR]
+RewriteCond %{query_string} union.*select.*\( [NC,OR]
+RewriteCond %{query_string} union.*all.*select [NC]
+RewriteRule ^(.*)$ index.php [F,L]
+
+SetEnvIf user-agent «Indy Library» stayout=1
+SetEnvIf user-agent «libwww-perl» stayout=1
+SetEnvIf user-agent «Wget» stayout=1
+deny from env=stayout
+
+RewriteCond %{QUERY_STRING} author=\d
+RewriteRule ^ /? [L,R=301]
+
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text\.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image\.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+<FilesMatch ".(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "readme.html">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "ru_RU.po">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "wp-config.php">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
