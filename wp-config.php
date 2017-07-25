@@ -65,6 +65,15 @@ define('NONCE_SALT',       'Q5-,(mpf/CcOJWj`9hj6#:+G^]`Ok]E:kc&o?iIv`;|=4dY{]3rI
  */
 $table_prefix  = 'tcimd_';
 
+
+define('WP_HOME','http://localhost:8888/mercedes');
+define('ADMIN_COOKIE_PATH', '/');
+define('COOKIE_DOMAIN', '');
+define('COOKIEPATH', '');
+define('SITECOOKIEPATH', '');
+define('WP_SITEURL','http://localhost:8888/mercedes');
+
+
 /**
  * For developers: WordPress debugging mode.
  *

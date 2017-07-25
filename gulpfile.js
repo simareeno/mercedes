@@ -28,6 +28,7 @@ const gulp = require('gulp'),
 
 const DEST = 'wp-content/themes/simareeno',
 	SRC = 'src',
+	RESOURCES = 'resources',
 	TEMPLATES = join(SRC, 'templates'),
 	STYLES = join(SRC, 'styles'),
 	SCRIPTS = join(SRC, 'scripts');
@@ -56,13 +57,13 @@ gulp.task('less', function() {
 		.pipe(postCss(processors))
 		.pipe(concat('styles.css'))
 		.pipe(!production ? sourceMaps.write() : util.noop())
-		.pipe(gulp.dest(join(DEST, 'styles')));
+		.pipe(gulp.dest(join(RESOURCES, 'styles')));
 });
 
 
 gulp.task('images', function(){
 	return gulp.src(join(IMAGES, '**/*.+(png|jpg|jpeg|gif|svg)'))
-	.pipe(gulp.dest(join(DEST, 'images')));
+	.pipe(gulp.dest(join(RESOURCES, 'images')));
 });
 
 gulp.task('templates', function(){
@@ -86,33 +87,93 @@ gulp.task('js', function() {
 				filename: 'bundle.js',
 			},
 		}))
-		.pipe(gulp.dest(join(DEST, 'scripts')));
+		.pipe(gulp.dest(join(RESOURCES, 'scripts')));
 });
 
 
-gulp.task('clean:dist', function() {
-	return del.sync(DEST);
+gulp.task('clean', function() {
+	return del([DEST, RESOURCES]);
 });
 
-gulp.task('build', function (callback) {
-	runSequence('clean:dist',
+gulp.task('default', function (callback) {
+	runSequence('clean',
 		['templates', 'less', 'js', 'images'],
 		callback
 	)
 })
 
-gulp.task('deploy', function() {
-	gulp.src(DEST)
-		.pipe(rsync({
-			hostname: '77.222.40.32',
-			username: 'nordwestru',
-			destination: 'merc/public_html/wp-content/themes',
-			progress: true,
-			incremental: true,
-			relative: false,
-			emptyDirectories: true,
-			recursive: true,
-			clean: true,
-			exclude: [],
-		}));
+
+// W A T C H
+
+gulp.task('clean:dist', function() {
+	return del.sync(DEST);
 });
+
+
+gulp.task('templates:sync', ['templates'], function(done) {
+	browserSync.reload();
+	done();
+});
+
+
+gulp.task('less:sync', ['less'], function(done) {
+	browserSync.reload();
+	done();
+});
+
+
+gulp.task('js:sync', ['js'], function(done) {
+	browserSync.reload();
+	done();
+});
+
+gulp.task('images:sync', ['images'], function(done) {
+	browserSync.reload();
+	done();
+});
+
+gulp.task('browserSync', function() {
+	browserSync.init({
+		proxy: 'http://localhost:8888/mercedes/'
+	})
+	gulp.watch(join(TEMPLATES, '**/*'), ['templates:sync']);
+	gulp.watch(join(STYLES, '**/*.less'), ['less:sync']);
+	gulp.watch(join(SCRIPTS, '**/*.js'), ['js:sync']);
+	gulp.watch(join(IMAGES, '**/*.+(png|jpg|jpeg|gif|svg)'), ['images:sync']);
+})
+
+gulp.task('watch', ['browserSync'], function() {
+	gulp.watch(join(TEMPLATES, '**/*'), ['templates']);
+	gulp.watch(join(STYLES, '**/*.less'), ['less']);
+	gulp.watch(join(SCRIPTS, '**/*.js'), ['js']);
+	gulp.watch(join(IMAGES, '**/*.+(png|jpg|jpeg|gif|svg)'), ['images']);
+})
+
+// D E P L O Y
+
+function deployTo(path) {
+	return {
+		hostname: '77.222.40.32',
+		username: 'nordwestru',
+		destination: path,
+		progress: true,
+		incremental: true,
+		relative: false,
+		emptyDirectories: true,
+		recursive: true,
+		clean: true,
+		exclude: [],
+	}
+}
+
+gulp.task('deploy:theme', function() {
+	gulp.src(DEST)
+		.pipe(rsync(deployTo('merc/public_html/wp-content/themes')));
+});
+
+gulp.task('deploy:resources', function() {
+	gulp.src(RESOURCES)
+		.pipe(rsync(deployTo('merc/public_html')));
+});
+
+gulp.task('deploy', ['deploy:resources', 'deploy:theme']);
