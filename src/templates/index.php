@@ -1,24 +1,29 @@
-<?php define('WP_USE_THEMES', false); get_header(); ?>
+<?php get_header(); ?>
 
 <body>
 
+<?php include (TEMPLATEPATH . '/hat.php'); ?>
 
-<?php if(is_front_page() ) {
-include (TEMPLATEPATH . '/hat.php');
-} else {
-include (TEMPLATEPATH . '/hat.php'); }
-?>
+<section class="container">
+	<h2>Запчасти</h2>
 
-<div id="content-wrapper"><div class="container container-article">
+</section>
 
-	<div class="main-content">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div class="entry"> <?php the_content(); ?> </div>
-		<?php endwhile; else: ?><p>Увы, показывать нечего.</p><?php endif; ?>
-	</div>
-</div></div>
+<section class="container">
+	<?php
+	$categories = get_the_category();
+	$topcats = array();
+	foreach ($categories as $cat) {
+		if ($cat->parent != 0) $cat = get_term($cat->parent, 'category');
+		$topcats[$cat->term_id] = '<a href="/' . $cat->slug . '">' . $cat->name . '</a>';
+	}
+	echo implode(', ', $topcats);
+	?>
+</section>
 
-
+<section class="container">
+	<h1>Запчасти Мерседес</h1>
+</section>
 
 <?php include (TEMPLATEPATH . '/scripts.php'); ?>
 

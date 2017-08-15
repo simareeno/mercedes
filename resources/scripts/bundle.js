@@ -47,7 +47,10 @@
 	$ = __webpack_require__(1);
 
 	$(function () {
-		console.log('ss');
+		$('.navigation__icon').click(function () {
+			$('.navigation__list').toggleClass('navigation__list--active');
+			$(this).toggleClass('navigation__icon--active');
+		})
 	})
 
 

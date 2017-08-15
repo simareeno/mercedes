@@ -12,6 +12,7 @@ const gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	postCss = require('gulp-postcss'),
 	imageMin = require('imagemin'),
+	imgRetina = require('gulp-img-retina');
 	browserSync = require('browser-sync').create(),
 	rollup = require('gulp-rollup'),
 	babel = require('rollup-plugin-babel'),
@@ -67,7 +68,8 @@ gulp.task('images', function(){
 });
 
 gulp.task('templates', function(){
-	return gulp.src(join(TEMPLATES, '**/*'))
+	return gulp.src(join(TEMPLATES, '**/*.php'))
+	// .pipe(imgRetina())
 	.pipe(gulp.dest(DEST));
 });
 
@@ -134,27 +136,27 @@ gulp.task('images:sync', ['images'], function(done) {
 
 gulp.task('browserSync', function() {
 	browserSync.init({
-		proxy: 'http://localhost:8888/mercedes/'
+		proxy: 'http://localhost:8888/'
 	})
 	gulp.watch(join(TEMPLATES, '**/*'), ['templates:sync']);
 	gulp.watch(join(STYLES, '**/*.less'), ['less:sync']);
 	gulp.watch(join(SCRIPTS, '**/*.js'), ['js:sync']);
 	gulp.watch(join(IMAGES, '**/*.+(png|jpg|jpeg|gif|svg)'), ['images:sync']);
-})
+});
 
 gulp.task('watch', ['browserSync'], function() {
 	gulp.watch(join(TEMPLATES, '**/*'), ['templates']);
 	gulp.watch(join(STYLES, '**/*.less'), ['less']);
 	gulp.watch(join(SCRIPTS, '**/*.js'), ['js']);
 	gulp.watch(join(IMAGES, '**/*.+(png|jpg|jpeg|gif|svg)'), ['images']);
-})
+});
 
 // D E P L O Y
 
 function deployTo(path) {
 	return {
-		hostname: '77.222.40.32',
-		username: 'nordwestru',
+		hostname: '77.222.57.177',
+		username: 'amichigrou',
 		destination: path,
 		progress: true,
 		incremental: true,
@@ -168,12 +170,12 @@ function deployTo(path) {
 
 gulp.task('deploy:theme', function() {
 	gulp.src(DEST)
-		.pipe(rsync(deployTo('merc/public_html/wp-content/themes')));
+		.pipe(rsync(deployTo('public_html/wp-content/themes')));
 });
 
 gulp.task('deploy:resources', function() {
 	gulp.src(RESOURCES)
-		.pipe(rsync(deployTo('merc/public_html')));
+		.pipe(rsync(deployTo('public_html')));
 });
 
 gulp.task('deploy', ['deploy:resources', 'deploy:theme']);
