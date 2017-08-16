@@ -1,0 +1,71 @@
+.front-banner {
+	position: relative;
+	width: 100%;
+	user-select: none;
+	margin-bottom: @unit * 4;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media @desktop {
+			flex-wrap: nowrap;
+			padding: 30px 0;
+		}
+
+		@media @desktop-huge {
+			padding: 50px 0;
+		}
+	}
+
+
+	&__image {
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 2;
+		padding: 48px 0;
+		margin: 0 auto;
+
+		@media @desktop {
+			margin-left: 90px;
+			padding-top: 72px;
+		}
+
+		img {
+			max-width: 260px;
+
+			@media @tablet {
+				max-width: 380px;
+			}
+
+			@media @desktop {
+				max-width: 390px;
+			}
+
+			@media @desktop-huge {
+				max-width: 490px;
+			}
+		}
+	}
+
+	&__background {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: -118px;
+		background-color: #000;
+
+		@media @desktop {
+			top: -72px;
+		}
+	}
+}

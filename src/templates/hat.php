@@ -1,8 +1,17 @@
-<header class="header">
+<header class="header <?php if ( is_front_page() ) { echo 'header--black'; } ?>">
 	<div class="container">
 		<div class="header__logo logo">
 			<a class="logo__link" href="/">
-				<img class="logo__image" src="/resources/images/logo.png" alt="Логотип Mercedes auto" srcset="/resources/images/logo.png 1x, /resources/images/logo@2x.png 2x, /resources/images/logo@3x.png 3x">
+
+				<?php
+
+				if( is_front_page() ){
+					echo '<img class="logo__image" src="/resources/images/logo-white.png" alt="Мастермерс" srcset="/resources/images/logo-white.png 1x, /resources/images/logo-white@2x.png 2x, /resources/images/logo-white@3x.png 3x">';
+				}
+				else {
+					echo '<img class="logo__image" src="/resources/images/logo.png" alt="Мастермерс" srcset="/resources/images/logo.png 1x, /resources/images/logo@2x.png 2x, /resources/images/logo@3x.png 3x">';
+				}
+				?>
 			</a>
 		</div>
 		<nav class="navigation" role="navigation">
