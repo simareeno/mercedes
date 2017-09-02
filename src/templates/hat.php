@@ -22,11 +22,11 @@
 			</div>
 			<ul class="navigation__list">
 				<li class="navigation__item">
-					<a class="navigation__item-link" href="/catalog">Запчасти</a>
+					<a class="navigation__item-link" href="/zapchasti">Запчасти</a>
 				</li>
-				<li class="navigation__item">
+				<!-- <li class="navigation__item">
 					<a class="navigation__item-link" href="/service">Сервис</a>
-				</li>
+				</li> -->
 				<li class="navigation__item">
 					<a class="navigation__item-link" href="/contacts">Контакты</a>
 				</li>

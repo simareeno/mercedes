@@ -1,14 +1,32 @@
 .footer {
-	box-shadow: 0 -1px 0 @border-color;
-	padding: @unit * 2 0;
-	margin-top: @unit * 4;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  padding: @unit * 2 0;
+  margin-top: @unit * 4;
+  background: black;
+  color: white;
 
-	.container {
-		display: flex;
-		justify-content: space-between;
-	}
+  ::selection {
+    color: black;
+    background: rgba(255, 255, 255, 0.99);
+  }
 
-	&__copyright {
-		color: @grey;
-	}
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__phone {
+    color: white;
+    padding-bottom: 8px;
+    transition: box-shadow @animation;
+    box-shadow: 0 1px 0 @border-color-black;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 2px 0 white;
+    }
+  }
 }

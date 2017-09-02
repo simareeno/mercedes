@@ -1,7 +1,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
-<title> <?php wp_title("",true); ?> <?php bloginfo('name'); ?></title>
+<title>
+
+<?php if (is_front_page()) {
+  echo 'Запчасти Мерседес бенц купить бу. Каталог запчастей, цены. Мастермерс';
+} elseif (is_category()) {
+
+  $category = get_category( get_query_var( 'cat' ) );
+  $catgoryID = $category->cat_ID;
+  $child = get_category($catgoryID);
+  $parent = $child->parent;
+  $parent_name = get_category($parent);
+  $parent_name = $parent_name->name;
+
+  if ($parent_name == 'Запчасти') :
+    echo 'Запчасти для Mercedes ';
+    echo single_cat_title();
+    echo ' купить бу. Каталог запчастей, цены. Мастермерс';
+  else :
+    echo single_cat_title();
+    echo ' для Мерседес бенц ';
+    echo $parent_name;
+    echo ' купить бу. Каталог запчастей, цены. Мастермерс';
+  endif;
+
+} else {
+  echo wp_title("",true);
+  echo '. Мастермерс';
+}
+
+?>
+
+</title>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="description" content="<?php if(get_post_meta($post->ID, "description", true) !='' ) echo get_post_meta($post->ID, "description", true); else bloginfo('description');?>" />
@@ -22,6 +53,6 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/resources/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link type="text/css" rel="stylesheet" href="/resources/styles/styles.css">
+<link type="text/css" rel="stylesheet" href="/resources/styles/style.css">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>

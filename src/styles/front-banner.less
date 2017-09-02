@@ -7,14 +7,10 @@
 	.container {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 
 		@media @desktop {
 			flex-wrap: nowrap;
-			padding: 30px 0;
-		}
-
-		@media @desktop-huge {
-			padding: 50px 0;
 		}
 	}
 
@@ -24,6 +20,11 @@
 
 		img {
 			width: 100%;
+			max-width: 500px;
+
+			@media @tablet {
+				max-width: initial;
+			}
 		}
 	}
 
@@ -35,7 +36,12 @@
 
 		@media @desktop {
 			margin-left: 90px;
-			padding-top: 72px;
+			padding: 150px 0;
+		}
+
+		@media @desktop-huge {
+			padding: 200px 0;
+			margin-left: 90px;
 		}
 
 		img {
