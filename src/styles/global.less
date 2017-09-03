@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html {
@@ -32,6 +33,14 @@ p {
   max-width: 650px;
   font-size: @font-size-m;
   line-height: 26px;
+}
+
+.wrapper {
+  min-height: calc(~'100% - 118px - 72px - 24px - 48px');
+
+  @media @desktop {
+    min-height: calc(~'100% - 74px - 72px - 24px - 48px');
+  }
 }
 
 .container {

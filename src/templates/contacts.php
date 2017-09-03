@@ -116,7 +116,5 @@ Template Name: Contacts
   </div>
 </section>
 
-<?php include (TEMPLATEPATH . '/scripts.php'); ?>
-
 <?php
 get_footer();

@@ -1,3 +1,7 @@
+</div>
+
+<?php include (TEMPLATEPATH . '/scripts.php'); ?>
+
 <footer class="footer">
 	<div class="container">
 		<div class="footer__copyright">Мастермерс, <?php echo date("Y"); ?></div>
