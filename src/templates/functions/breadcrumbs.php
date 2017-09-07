@@ -51,10 +51,8 @@ class Breadcrumbs {
 									  // Например: array( 'category'=>array(45,'term_name'), 'tax_name'=>array(1,2,'name') )
 									  // 'category' - такса для которой указываются приор. элементы: 45 - ID термина и 'term_name' - ярлык.
 									  // порядок 45 и 'term_name' имеет значение: чем раньше тем важнее. Все указанные термины важнее неуказанных...
-		'nofollow' => false, // добавлять rel=nofollow к ссылкам?
+		'nofollow' => false,
 
-		// служебные
-		'sep'             => '',
 		'linkpatt'        => '',
 		'pg_end'          => '',
 	);
@@ -78,7 +76,7 @@ class Breadcrumbs {
 
 			// Разметка по умолчанию
 			if( ! $mark ) $mark = array(
-				'wrappatt'  => '<div>%s</div>',
+				'wrappatt'  => '<div class="breadcrumbs__wrapper">%s</div>',
 				'linkpatt'  => '<a class="breadcrumb" href="%s">%s</a>',
 				'sep_after' => '',
 			);
