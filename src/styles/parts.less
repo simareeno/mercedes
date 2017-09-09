@@ -46,7 +46,7 @@
 
   &__wrapper {
     display: flex;
-    overflow: scroll;
+    overflow: auto;
   }
 }
 
@@ -94,6 +94,14 @@
 .details {
   display: flex;
 
+  &__left {
+    .columnS(12);
+  }
+
+  &__right {
+    // .columnS(6);
+  }
+
   .price {
     margin: @unit 0;
   }
@@ -112,7 +120,11 @@
   }
 }
 
-.gallery {
-  min-height: 400px;
-  background: @skeleton;
+.part-details {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media @tablet {
+    flex-wrap: nowrap;
+  }
 }

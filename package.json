@@ -40,6 +40,7 @@
     "imagemin": "^5.3.1",
     "jquery": "^3.2.1",
     "minimist": "^1.2.0",
+    "photoswipe": "^4.1.2",
     "rollup-plugin-babel": "^2.7.1",
     "run-sequence": "^2.0.0",
     "webpack-stream": "^3.2.0"
