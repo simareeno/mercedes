@@ -53,6 +53,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/resources/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/resources/styles/style.css">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 </head>

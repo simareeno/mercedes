@@ -13,7 +13,7 @@
   </div>
 </section>
 
-<section class="catalog">
+<!-- <section class="catalog">
   <div class="container">
     <h2><a href="zapchasti">Каталог запчастей</a></h2>
     <?php
@@ -26,7 +26,7 @@
     echo implode(', ', $topcats);
     ?>
   </div>
-</section>
+</section> -->
 
 <section class="seo">
   <div class="container">

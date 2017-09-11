@@ -1,8 +1,10 @@
-$ = require('jquery');
-const PhotoSwipe = require('photoswipe/dist/photoswipe.min.js');
-const PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.min.js');
+// $ = require('jquery');
+// const PhotoSwipe = require('photoswipe/dist/photoswipe.min.js');
+// const PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.min.js');
 
 $(function() {
+  const Fotorama = require('fotorama/fotorama.js');
+
   $('.navigation__icon').click(function() {
     $('.navigation__list').toggleClass('navigation__list--active');
     $('body').toggleClass('body--fixed');

@@ -41,7 +41,7 @@ if ($parent_name == 'Запчасти') : ?>
             'show_count' => 1,
             'title_li' => '',
             'depth' => 1,
-            'hide_empty' => false,
+            'hide_empty' => true,
             'use_desc_for_title' => 0,
             'child_of' => $this_category->cat_ID,
             'walker' => new Custom_Walker_Category(),
@@ -84,7 +84,10 @@ if ($parent_name == 'Запчасти') : ?>
         foreach ( $myposts_pr as $post ) : setup_postdata( $post ); ?>
 
         <li class="parts-list__item part">
-          <a class="part__link" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+          <a class="part__link" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+            <div class="part__link-title"><?php the_title(); ?></div>
+            <?php echo '<div class="part__link-price">от '.get_post_meta( get_the_ID(), "price", true).' ₽</div>'; ?>
+          </a>
         </li>
 
         <?php endforeach; wp_reset_postdata();?>

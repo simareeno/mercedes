@@ -47,6 +47,40 @@
   &__wrapper {
     display: flex;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+
+    @media @desktop {
+      overflow: hidden;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background: -moz-linear-gradient(
+          left,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        background: -webkit-linear-gradient(
+          left,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(
+            startColorstr='#00ffffff',
+            endColorstr='#ffffff',
+            GradientType=1
+          );
+      }
+    }
   }
 }
 
@@ -82,12 +116,49 @@
 
 .parts-list {
   margin-top: @unit * 2;
+
+  @media @desktop {
+    max-width: 700px;
+  }
 }
 
 .part {
+  padding: @unit / 2;
+  box-shadow: inset 0 -1px 0 0 @border-color;
+  transition: background @animation, box-shadow @animation;
+
+  @media @desktop {
+    padding: @unit;
+  }
+
+  &:hover {
+    background: @skeleton;
+    // box-shadow: inset 0 -2px 0 0 black;
+  }
+
   &__link {
-    display: block;
+    display: flex;
     padding: @unit 0;
+    color: black;
+
+    &:hover {
+      color: black;
+    }
+
+    &-title {
+      flex-grow: 1;
+
+      @media @desktop {
+        font-size: @font-size-m;
+        line-height: @line-height-m;
+      }
+    }
+
+    &-price {
+      opacity: .5;
+      white-space: nowrap;
+      margin-left: @unit;
+    }
   }
 }
 
@@ -111,7 +182,6 @@
   font-size: @font-size-l;
   font-size: @line-height-l;
   font-weight: bold;
-  font-style: italic;
 
   &:before {
     font-size: @font-size-m;
@@ -123,8 +193,29 @@
 .part-details {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column-reverse;
 
-  @media @tablet {
+  @media @desktop {
     flex-wrap: nowrap;
+    flex-direction: row;
   }
+}
+
+.fotorama__wrap {
+  background: @skeleton;
+  padding: @unit * 2;
+  margin-bottom: @unit * 2;
+
+  @media @desktop {
+    margin: 0;
+  }
+}
+
+.fotorama__fullscreen-icon {
+  background: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  right: 0 !important;
+  top: 0 !important;
+  z-index: 10 !important;
 }
