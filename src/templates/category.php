@@ -38,7 +38,7 @@ if ($parent_name == 'Запчасти') : ?>
         echo '<ul class="categories">';
         $args = array(
             'orderby' => 'name',
-            'show_count' => 1,
+            'show_count' => 0,
             'title_li' => '',
             'depth' => 1,
             'hide_empty' => true,

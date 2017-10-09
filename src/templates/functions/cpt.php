@@ -1,5 +1,7 @@
 <?php
 
+// Услуги сервиса
+
 function create_my_taxonomies() {
 	register_taxonomy(
         'services_categories',
@@ -16,6 +18,7 @@ function create_my_taxonomies() {
         )
     );
 }
+
 
 function custom_post_type() {
 	$serviceLabels = array(
@@ -54,8 +57,4 @@ function custom_post_type() {
 
 	register_post_type( 'service', $serviceArgs );
 }
-
-add_action( 'init', 'custom_post_type', 0 );
-add_action( 'init', 'create_my_taxonomies', 0 );
-
 ?>
