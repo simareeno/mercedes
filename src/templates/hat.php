@@ -14,31 +14,34 @@
 				?>
 			</a>
 		</div>
-		<nav class="navigation" role="navigation">
-			<div class="navigation__icon">
-				<div class="navigation__icon-line navigation__icon-line--1"></div>
-				<div class="navigation__icon-line navigation__icon-line--2"></div>
-				<div class="navigation__icon-line navigation__icon-line--3"></div>
-			</div>
-			<ul class="navigation__list">
-				<li class="navigation__item">
-					<a class="navigation__item-link" href="/zapchasti">Запчасти</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__item-link" href="/kompressori/">Компрессоры</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__item-link" href="/dostavka-i-oplata">Доставка и оплата</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__item-link" href="/contacts">Контакты</a>
-				</li>
-			</ul>
-		</nav>
 		<div class="phone">
 			<a class="phone__link" href="tel:+79256321506">+7 925 632 15 06</a>
 		</div>
 	</div>
 </header>
+
+<nav class="navigation <?php if ( is_front_page() ) { echo 'navigation--black'; } ?>" role="navigation">
+	<div class="container">
+	<div class="navigation__icon">
+		<div class="navigation__icon-line navigation__icon-line--1"></div>
+		<div class="navigation__icon-line navigation__icon-line--2"></div>
+		<div class="navigation__icon-line navigation__icon-line--3"></div>
+	</div>
+	<ul class="navigation__list">
+		<li class="navigation__item">
+			<a class="navigation__item-link" href="/zapchasti">Запчасти</a>
+		</li>
+		<li class="navigation__item">
+			<a class="navigation__item-link" href="/kompressori/">Компрессоры</a>
+		</li>
+		<li class="navigation__item">
+			<a class="navigation__item-link" href="/dostavka-i-oplata">Доставка и оплата</a>
+		</li>
+		<li class="navigation__item">
+			<a class="navigation__item-link" href="/contacts">Контакты</a>
+		</li>
+	</ul>
+	</div>
+</nav>
 
 <div class="wrapper">
