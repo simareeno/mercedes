@@ -24,9 +24,9 @@
 				<li class="navigation__item">
 					<a class="navigation__item-link" href="/zapchasti">Запчасти</a>
 				</li>
-				<!-- <li class="navigation__item">
-					<a class="navigation__item-link" href="/service">Сервис</a>
-				</li> -->
+				<li class="navigation__item">
+					<a class="navigation__item-link" href="/kompressori/">Компрессоры</a>
+				</li>
 				<li class="navigation__item">
 					<a class="navigation__item-link" href="/dostavka-i-oplata">Доставка и оплата</a>
 				</li>

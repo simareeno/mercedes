@@ -1,3 +1,5 @@
+<!-- Запчасти -->
+
 <?php get_header(); ?>
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 

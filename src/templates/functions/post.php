@@ -31,4 +31,14 @@ function dev_change_post_object() {
 add_action( 'admin_menu', 'dev_edit_admin_menus' );
 add_action( 'init', 'dev_change_post_object' );
 
+function get_custom_cat_template($single_template) {
+
+    if ( in_category( array( 61 )) ) {
+      $single_template = dirname( __FILE__ ) . '/../single-compressor.php';
+    }
+  return $single_template;
+}
+
+add_filter( "single_template", "get_custom_cat_template" ) ;
+
 ?>

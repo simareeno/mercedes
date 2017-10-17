@@ -101,14 +101,14 @@ h2,
 .h2 {
   font-size: @font-size-xl;
   line-height: @line-height-xl;
-  margin: @unit * 3 0 0;
+  margin: @unit * 3 0;
 }
 
 h3,
 .h3 {
   font-size: @font-size-l;
   line-height: @line-height-l;
-  margin: @unit * 2 0 0;
+  margin: @unit * 2 0 @unit;
 }
 
 h1,
@@ -123,7 +123,6 @@ h3,
     display: inline-block;
     color: black;
     padding-bottom: @unit / 2;
-    margin-bottom: @unit * 2;
     transition: box-shadow @animation;
     box-shadow: 0 1px 0 @border-color;
 

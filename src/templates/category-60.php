@@ -1,3 +1,5 @@
+<!-- Компрессоры -->
+
 <?php get_header(); ?>
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
@@ -19,35 +21,72 @@
 
 <section class="marks">
   <div class="container">
-    <div class="mark">
-      <div class="mark__logo"><a href="/kompressori/audi/"><img src="/resources/images/mercedes-logo.png" alt=""></a></div>
-      <div class="list">
-        <a href=""><div class="list__item">Audi A6 Allroad 2000-2006</div></a>
-        <a href=""><div class="list__item">Audi Allroad 2007-2010</div></a>
-        <a href=""><div class="list__item">Audi A8</div></a>
-        <a href=""><div class="list__item">Audi Q7</div></a>
-      </div>
-    </div>
 
-    <div class="mark">
-      <div class="mark__logo"><img src="/resources/images/audi-logo.png" alt=""></div>
-      <div class="list">
-        <a href=""><div class="list__item">Audi A6 Allroad 2000-2006</div></a>
-        <a href=""><div class="list__item">Audi Allroad 2007-2010</div></a>
-        <a href=""><div class="list__item">Audi A8</div></a>
-        <a href=""><div class="list__item">Audi Q7</div></a>
-      </div>
-    </div>
+    <?php
 
-    <div class="mark">
-      <div class="mark__logo"><img src="/resources/images/lr-logo.png" alt=""></div>
+    $category = get_category( get_query_var( 'cat' ) );
+    $catgoryID = $category->cat_ID;
+    $child = get_category($catgoryID);
+    $parent = $child->parent;
+    $parent_name = get_category($parent);
+    $parent_name = $parent_name->name;
+
+    $args = array(
+      'type'         => 'post',
+      'child_of'     => $catgoryID,
+      'parent'       => $catgoryID,
+      'orderby'      => 'name',
+      'order'        => 'ASC',
+      'hide_empty'   => 0,
+      'hierarchical' => 1,
+      'exclude'      => '',
+      'include'      => '',
+      'number'       => 0,
+      'taxonomy'     => 'category',
+      'pad_counts'   => false,
+    );
+
+    $categories = get_categories($args );
+    if ( $categories ) {
+    foreach( $categories as $cat ) {
+      $imageUrl = z_taxonomy_image_url($cat->term_id, array(200, 150));
+      $cat_link = get_category_link( $cat->cat_ID );
+      $cat_ID = $category->cat_ID;
+      echo '<div class="mark">';
+      echo '<div class="mark__logo">';
+      echo '<a class="mark__link" href="' . $cat_link . '">';
+      echo '<img src="' . $imageUrl . '" />';
+      echo '</div>';
+      echo '</a>';
+      ?>
+
       <div class="list">
-        <a href=""><div class="list__item">Audi A6 Allroad 2000-2006</div></a>
-        <a href=""><div class="list__item">Audi Allroad 2007-2010</div></a>
-        <a href=""><div class="list__item">Audi A8</div></a>
-        <a href=""><div class="list__item">Audi Q7</div></a>
+      <?php
+        $args_pr = array(
+          'post_type'        => 'post',
+          'category'         => $cat_ID,
+          'posts_per_page'   => -1,
+          'orderby'          => 'name',
+          'order'            => 'ASC',
+          'post_status'      => 'publish');
+        $myposts_pr = get_posts( $args_pr );
+
+        foreach ( $myposts_pr as $post ) : setup_postdata( $post ); ?>
+
+          <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+            <div class="list__item"><?php the_title(); ?></div>
+          </a>
+
+        <?php endforeach; wp_reset_postdata();?>
       </div>
-    </div>
+
+      <?php
+
+      echo '</div>';
+    }
+  }
+    ?>
+
   </div>
 </section>
 

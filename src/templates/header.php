@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
 <title>
-
-<?php if (is_front_page()) {
-  echo 'Запчасти Мерседес бенц купить бу. Каталог запчастей, цены. Мастермерс';
-} elseif (is_category()) {
+<?php
+  if (is_front_page()) {
+    echo 'Запчасти Мерседес бенц купить бу. Каталог запчастей, цены. Мастермерс';
+  } elseif (is_category()) {
 
   $category = get_category( get_query_var( 'cat' ) );
   $catgoryID = $category->cat_ID;
@@ -24,7 +24,24 @@
     echo $parent_name;
     echo ' купить бу. Каталог запчастей, цены. Мастермерс';
   endif;
+} elseif (is_single()){
+  $category = get_the_category();
+  $catgoryID = $category[0]->cat_ID;
+  $child = get_category($catgoryID);
+  $parent = $child->parent;
+  $parent_name = get_category($parent);
+  $parent_name = $parent_name->name;
 
+  if ($parent_name == 'Компрессоры пневмоподвески') :
+    echo 'Компрессор пневмоподвески для ';
+    echo the_title();
+  else :
+    echo 'Купить ';
+    echo the_title();
+    echo ' для ';
+    echo $parent_name;
+    echo '. Цена, каталог запчастей';
+  endif;
 } else {
   echo wp_title("",true);
   echo '. Мастермерс';
