@@ -86,7 +86,7 @@ if ($parent_name == 'Запчасти') : ?>
         <li class="parts-list__item part">
           <a class="part__link" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
             <div class="part__link-title"><?php the_title(); ?></div>
-            <?php echo '<div class="part__link-price">от '.get_post_meta( get_the_ID(), "price", true).' ₽</div>'; ?>
+            <?php echo '<div class="part__link-price">'.get_post_meta( get_the_ID(), "price", true).' ₽</div>'; ?>
           </a>
         </li>
 

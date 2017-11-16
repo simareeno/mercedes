@@ -51,7 +51,7 @@
     foreach( $categories as $cat ) {
       $imageUrl = z_taxonomy_image_url($cat->term_id, array(200, 150));
       $cat_link = get_category_link( $cat->cat_ID );
-      $cat_ID = $category->cat_ID;
+      $cat_ID = $cat->cat_ID;
       echo '<div class="mark">';
       echo '<div class="mark__logo">';
       echo '<a class="mark__link" href="' . $cat_link . '">';

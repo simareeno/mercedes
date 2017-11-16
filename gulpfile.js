@@ -49,11 +49,11 @@ gulp.task('less', function() {
 				})
 			})
 		)
-		.pipe(!production ? sourceMaps.init() : util.noop())
+		// .pipe(!production ? sourceMaps.init() : util.noop())
 		.pipe(less())
 		.pipe(postCss(processors))
 		.pipe(concat('style.css'))
-		.pipe(!production ? sourceMaps.write() : util.noop())
+		// .pipe(!production ? sourceMaps.write() : util.noop())
 		.pipe(gulp.dest(DEST))
 		.pipe(gulp.dest(join(RESOURCES, 'styles')));
 });

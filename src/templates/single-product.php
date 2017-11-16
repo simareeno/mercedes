@@ -22,7 +22,6 @@ $year = get_post_meta($post->ID, "year", true);
 		<div class="worklink"><span class="year"><?php echo $year ?></span> <a class="mail" target="_blank" href="http://<?php echo $weblink ?>"> <?php echo $weblink ?></a> </div>
 		<div class="workdesc"><p><?php echo $desc ?></p></div>
 
-
 	</div>
 </div>
 

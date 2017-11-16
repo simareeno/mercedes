@@ -14,12 +14,17 @@
 <section class="container part-details">
 
   <div class="half">
-    <?php $price = get_field( "price" );
-    if ( $price ) { echo '<div class="price">'.get_post_meta( get_the_ID(), "price", true).' ₽</div>';  } else {  } ?>
+    <?php
+    $price = get_field( "price" );
+    $priceFrom = get_field("price-from");
+    $class = "price";
+    if ($priceFrom) { $class .= ' price--from'; };
+
+    if ( $price ) { echo '<div class="'.$class.'">'.get_post_meta( get_the_ID(), "price", true).' ₽</div>';  } else {  } ?>
     <?php $description = get_field( "description" );
     if ( $description ) { echo '<p class="description">'.get_post_meta( get_the_ID(), "description", true).'</p>';  } else {  } ?>
-    <h3 class="how-to-buy">Доставка и оплата</h3>
-    <p>Вы можете забрать товар самовывозом или оплатить доставку. Так же, мы доставляем товары по всей России. <a href="/dostavka-i-oplata">Подробнее</a></p>
+    <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
+    <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
   </div>
 
 

@@ -33,7 +33,7 @@ add_action( 'init', 'dev_change_post_object' );
 
 function get_custom_cat_template($single_template) {
 
-    if ( in_category( array( 61 )) ) {
+    if ( in_category( array( 61, 62, 63, 64, 65, 66 )) ) {
       $single_template = dirname( __FILE__ ) . '/../single-compressor.php';
     }
   return $single_template;

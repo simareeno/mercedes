@@ -179,14 +179,21 @@
 }
 
 .price {
+  display: inline-block;
+  padding: @unit @unit * 1.5;
   font-size: @font-size-l;
   font-size: @line-height-l;
   font-weight: bold;
+  background: @accent;
+  transform: skew(-10deg);
+  border-radius: @border-radius;
 
-  &:before {
+  &--from:before {
     font-size: @font-size-m;
     font-size: @line-height-m;
     content: 'от ';
+    position: relative;
+    bottom: 3px;
   }
 }
 

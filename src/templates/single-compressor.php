@@ -14,16 +14,27 @@
 <section class="container part-details">
 
   <div class="half">
-    <?php $price = get_field( "price-exchange" );
-    if ( $price ) { echo '<div class="price">'.get_post_meta( get_the_ID(), "price-exchange", true).'
+    <?php
+    $price = get_field( "price-exchange" );
+    $priceFrom = get_field("price-from");
+    $class = "price";
+    if ($priceFrom) { $class .= ' price--from'; };
+
+    if ( $price ) { echo '<div class="'.$class.'">'.get_post_meta( get_the_ID(), "price-exchange", true).'
     ₽</div>';  } else {  } ?>
+
     <?php $price_without = get_field( "price-without-exchange" );
-    if ( $price_without ) { echo '<div class="price-desc">Цена без обмена старого компрессора на новый — '.get_post_meta( get_the_ID(), "price-without-exchange", true).' ₽</div>';  } else {  } ?>
+    if ( $price_without ) { echo '<div class="price-desc">Без обмена старого компрессора на новый — '.get_post_meta( get_the_ID(), "price-without-exchange", true).' ₽</div>';  } else {  } ?>
+
     <h3 class="how-to-buy">Номер запчасти</h3>
     <?php $number = get_field( "number" );
     if ( $number ) { echo '<div class="detail-numbers">'.get_post_meta( get_the_ID(), "number", true).'</div>';  } else {  } ?>
-    <h3 class="how-to-buy">Доставка и оплата</h3>
-    <p>Вы можете забрать товар самовывозом или оплатить доставку. Так же, мы доставляем товары по всей России. <a href="/dostavka-i-oplata">Подробнее</a></p>
+
+    <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
+    <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
+
+    <h3>Гарантия</h3>
+    <p>6&nbsp;месяцев. Срок эксплуатации после полугода ограничивается состоянием самой пневматической подвески. При её&nbsp;целостности и&nbsp;исправности компрессор исправно проработает 2-3&nbsp;года.</p>
   </div>
 
 
