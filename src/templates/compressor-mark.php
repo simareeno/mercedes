@@ -4,8 +4,22 @@ Template Name: Compressor-mark
 */
 ?>
 
-
 <?php get_header(); ?>
+<title><?php
+  $category = get_category( get_query_var( 'cat' ) );
+  $catgoryID = $category->cat_ID;
+  $child = get_category($catgoryID);
+  $parent = $child->parent;
+  $parent_name = get_category($parent);
+  $parent_name = $parent_name->name;
+  $name = single_cat_title("", false);
+  echo 'Компрессоры ';
+  echo $name;
+  echo '. Разборка, бу, цены';
+?></title>
+<meta name="description" content="Купить компрессор для <?php echo mb_strtolower($name) ?> на разборке в каталоге запчастей в Москве и по России" />
+<meta name="keywords" content="компресор <?php echo mb_strtolower($name) ?>, купить компрессоры <?php echo mb_strtolower($name) ?>, <?php echo mb_strtolower($name) ?>, запчасти <?php echo mb_strtolower($name) ?>, разборка <?php echo mb_strtolower($name) ?>, каталог запчастей, купить <?php echo mb_strtolower($name) ?>" />
+<?php include (TEMPLATEPATH . '/hat.php'); ?>
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">
@@ -17,15 +31,6 @@ Template Name: Compressor-mark
 <section class="container">
 
 <?php
-$category = get_category( get_query_var( 'cat' ) );
-$catgoryID = $category->cat_ID;
-$child = get_category($catgoryID);
-$parent = $child->parent;
-$parent_name = get_category($parent);
-$parent_name = $parent_name->name;
-
-// echo get_ancestors( $categoryID, 'category' );
-
 if ($parent_name == 'Запчасти') : ?>
 <h1 class="archive-title">Запчасти для Мерседес <?php single_cat_title() ?></h1>
 <?php else : ?>
@@ -38,7 +43,6 @@ if ($parent_name == 'Запчасти') : ?>
   <div class="container">
 
     <?php
-
     if (is_category()) {
     $this_category = get_category($cat);
     if ('' != get_category_children($this_category->cat_ID)) {

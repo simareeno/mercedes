@@ -1,4 +1,15 @@
 <?php get_header(); ?>
+<title><?php
+$price = get_field( "price-exchange" );
+$priceFrom = get_field("price-from");
+echo 'Компрессор ';
+echo the_title();
+echo ' от ';
+echo $price;
+echo ' ₽';
+?></title>
+<meta name="description" content="Купить компрессор <?php mb_strtolower(the_title()) ?> от <?php echo $price ?> в каталоге запчастей в разборке в Москве и России"/>
+<meta name="keywords" content="компрессор <?php the_title() ?>, запчасть <?php the_title() ?>, цена компрессора <?php the_title() ?>, купить компрессор <?php the_title() ?>, каталог запчастей, купить компрессор" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">
@@ -15,8 +26,6 @@
 
   <div class="half">
     <?php
-    $price = get_field( "price-exchange" );
-    $priceFrom = get_field("price-from");
     $class = "price";
     if ($priceFrom) { $class .= ' price--from'; };
 

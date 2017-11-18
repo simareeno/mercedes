@@ -1,6 +1,9 @@
 <!-- Компрессоры -->
 
 <?php get_header(); ?>
+<title>Купить автомобильный компрессор</title>
+<meta name="description" content="Купить компрессор на Мерседес, Ауди, БМВ, Фольксваген, Порше и Ленд Ровер" />
+<meta name="keywords" content="компрессоры, купить компрессор, мерседес, ауди, бмв, фольксваген, порше, ленд ровер, автомобильный компрессор" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">

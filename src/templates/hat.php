@@ -1,3 +1,5 @@
+</head>
+
 <header class="header <?php if ( is_front_page() ) { echo 'header--black'; } ?>">
 	<div class="container">
 		<div class="header__logo logo">

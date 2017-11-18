@@ -1,4 +1,19 @@
 <?php get_header(); ?>
+<title><?php
+  $category = get_category( get_query_var( 'cat' ) );
+  $catgoryID = $category->cat_ID;
+  $child = get_category($catgoryID);
+  $parent = $child->parent;
+  $parent_name = get_category($parent);
+  $parent_name = $parent_name->name;
+  $name = single_cat_title("", false);
+  echo $name;
+  echo ' Мерседес ';
+  echo $parent_name;
+  echo '. Каталог запчастей, цены';
+?></title>
+<meta name="description" content="Купить <?php echo mb_strtolower($name) ?> Мерседес <?php echo $parent_name ?> на разборке в каталоге запчастей в Москве и по России" />
+<meta name="keywords" content="<?php echo mb_strtolower($name) ?>, <?php echo $parent_name ?>, запчасти мерседес, разборка мерседес, каталог запчастей, купить <?php echo mb_strtolower($name) ?>, запчасть мерседес" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">
@@ -10,15 +25,6 @@
 <section class="container">
 
 <?php
-$category = get_category( get_query_var( 'cat' ) );
-$catgoryID = $category->cat_ID;
-$child = get_category($catgoryID);
-$parent = $child->parent;
-$parent_name = get_category($parent);
-$parent_name = $parent_name->name;
-
-// echo get_ancestors( $categoryID, 'category' );
-
 if ($parent_name == 'Запчасти') : ?>
 <h1 class="archive-title">Запчасти для Мерседес <?php single_cat_title() ?></h1>
 <?php else : ?>

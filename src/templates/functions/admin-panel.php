@@ -32,7 +32,7 @@ function mytheme_admin_bar_render() {
 }
 
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
-// add_action( 'admin_menu', 'remove_acf_menu', 999);
+add_action( 'admin_menu', 'remove_acf_menu', 999);
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
 

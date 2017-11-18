@@ -4,8 +4,10 @@ Template Name: Contacts
 */
 ?>
 
-
 <?php get_header(); ?>
+<title>Контакты Мастермерс</title>
+<meta name="description" content="Телефон и адреса самовывоза и сервисов Мастермерс" />
+<meta name="keywords" content="телефон, пункт самовывоза, мастермерс, адрес" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="container">

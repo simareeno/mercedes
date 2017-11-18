@@ -1,4 +1,14 @@
 <?php get_header(); ?>
+<title><?php
+$price = get_field( "price" );
+$priceFrom = get_field("price-from");
+echo the_title();
+echo ' Мерседес от ';
+echo $price;
+echo ' ₽';
+?></title>
+<meta name="description" content="Купить <?php mb_strtolower(the_title()) ?> на Мерседес от <?php echo $price ?> в каталоге запчастей в разборке Мерседес в Москве и России"/>
+<meta name="keywords" content="<?php the_title() ?>, запчасть мерседес, цена <?php the_title() ?>, купить <?php the_title() ?>, каталог запчастей, разборка мерседес" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">
@@ -15,11 +25,8 @@
 
   <div class="half">
     <?php
-    $price = get_field( "price" );
-    $priceFrom = get_field("price-from");
     $class = "price";
     if ($priceFrom) { $class .= ' price--from'; };
-
     if ( $price ) { echo '<div class="'.$class.'">'.get_post_meta( get_the_ID(), "price", true).' ₽</div>';  } else {  } ?>
     <?php $description = get_field( "description" );
     if ( $description ) { echo '<p class="description">'.get_post_meta( get_the_ID(), "description", true).'</p>';  } else {  } ?>

@@ -4,8 +4,10 @@ Template Name: Delivery
 */
 ?>
 
-
 <?php get_header(); ?>
+<title>Доставка и оплата в Мастермерс</title>
+<meta name="description" content="Узнайте об оплате, самовывозе и доставке по Москве и России." />
+<meta name="keywords" content="доставка, оплата, самовывоз, мастермерс, транспортная компания, стоимость, бесплатно" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="container">
