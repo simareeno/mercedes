@@ -138,3 +138,41 @@ h3,
   padding-top: @unit;
   margin-top: @unit * 2;
 }
+
+.button {
+  display: inline-flex;
+  border-radius: @border-radius;
+  color: black;
+  transition: transform @animation, box-shadow @animation;
+
+  &--secondary {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, .4), 0 5px 10px 0px rgba(0, 0, 0, .1);
+    }
+  }
+
+  &:hover {
+    color: black;
+    transform: translate(0, -1px);
+  }
+
+  &:active {
+    transform: translate(0, 1px);
+  }
+
+  &--size-l {
+    height: 50px;
+    padding: 0 @unit * 2;
+    font-size: @font-size-m;
+    line-height: 48px;
+  }
+
+  &--size-xl {
+    height: 60px;
+    padding: 0 @unit * 2.5;
+    font-size: @font-size-l;
+    line-height: 58px;
+  }
+}

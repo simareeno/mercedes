@@ -14,7 +14,7 @@ function remove_menus(){
     remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page('edit.php?post_type=acf');
 }
-add_action( 'admin_menu', 'remove_menus' );
+// add_action( 'admin_menu', 'remove_menus' );
 
 add_filter('acf/settings/show_admin', '__return_false');
 
@@ -32,7 +32,7 @@ function mytheme_admin_bar_render() {
 }
 
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
-add_action( 'admin_menu', 'remove_acf_menu', 999);
+// add_action( 'admin_menu', 'remove_acf_menu', 999);
 add_action('admin_bar_menu', 'remove_wp_logo', 999);
 
 

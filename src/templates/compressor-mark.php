@@ -20,7 +20,6 @@ Template Name: Compressor-mark
 <meta name="description" content="Купить компрессор для <?php echo mb_strtolower($name) ?> на разборке в каталоге запчастей в Москве и по России" />
 <meta name="keywords" content="компресор <?php echo mb_strtolower($name) ?>, купить компрессоры <?php echo mb_strtolower($name) ?>, <?php echo mb_strtolower($name) ?>, запчасти <?php echo mb_strtolower($name) ?>, разборка <?php echo mb_strtolower($name) ?>, каталог запчастей, купить <?php echo mb_strtolower($name) ?>" />
 <?php include (TEMPLATEPATH . '/hat.php'); ?>
-<?php include (TEMPLATEPATH . '/hat.php'); ?>
 
 <section class="breadcrumbs">
   <div class="container">

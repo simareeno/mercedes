@@ -1,4 +1,5 @@
-// $ = require('jquery');
+$ = require('jquery');
+// import initPhotoSwipeFromDOM from './initializeFotorama.js';
 // const PhotoSwipe = require('photoswipe/dist/photoswipe.min.js');
 // const PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default.min.js');
 
@@ -11,7 +12,7 @@ $(function() {
     $(this).toggleClass('navigation__icon--active');
   });
 
-  var initPhotoSwipeFromDOM = function(gallerySelector) {
+  initPhotoSwipeFromDOM = function(gallerySelector) {
     // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
@@ -222,6 +223,6 @@ $(function() {
     }
   };
 
-  // execute above function
+
   initPhotoSwipeFromDOM('.gallery');
 });

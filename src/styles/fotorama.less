@@ -1,6 +1,3 @@
-/*!
- * Fotorama 4.6.4 | http://fotorama.io/license/
- */
 .fotorama__arr:focus:after,
 .fotorama__fullscreen-icon:focus:after,
 .fotorama__html,
@@ -167,7 +164,7 @@
   .fotorama__fullscreen-icon,
   .fotorama__video-close,
   .fotorama__video-play {
-    background: url(../imagesfotorama@2x.png) 0 0/96px 160px no-repeat;
+    background: url(../images/fotorama@2x.png) 0 0/96px 160px no-repeat;
   }
 }
 .fotorama__thumb {
@@ -185,8 +182,20 @@
 }
 .fotorama {
   min-width: 1px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  background: #f9f9f9;
+  background-image: url(../images/image-placeholder.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: @unit;
+
+  @media @desktop {
+    min-height: 500px;
+  }
 }
+
 .fotorama:not(.fotorama--unobtrusive) > *:not(:first-child) {
   display: none;
 }

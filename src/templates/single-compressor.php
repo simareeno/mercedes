@@ -25,30 +25,38 @@ echo ' ₽';
 <section class="container part-details">
 
   <div class="half">
-    <?php
-    $class = "price";
-    if ($priceFrom) { $class .= ' price--from'; };
+    <div class="price-block">
+      <?php $class = "price";
+      if ($priceFrom) { $class .= ' price--from'; };
+      if ( $price ) {
+      echo '<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="price" content="'.get_post_meta( get_the_ID(), "price-exchange", true).'">
+        <meta itemprop="priceCurrency" content="RUB">
+        <div class="'.$class.'">'.get_post_meta( get_the_ID(), "price-exchange", true).' ₽</div>
+      </div>';  } else {  } ?>
 
-    if ( $price ) { echo '<div class="'.$class.'">'.get_post_meta( get_the_ID(), "price-exchange", true).'
-    ₽</div>';  } else {  } ?>
+      <?php
+        $price_without = get_field( "price-without-exchange" );
+        if ( $price_without ) { echo '<div class="price-description">Без обмена старого компрессора на новый — '.get_post_meta( get_the_ID(), "price-without-exchange", true).' ₽</div>';  } else {  }
+      ?>
+    </div>
 
-    <?php $price_without = get_field( "price-without-exchange" );
-    if ( $price_without ) { echo '<div class="price-desc">Без обмена старого компрессора на новый — '.get_post_meta( get_the_ID(), "price-without-exchange", true).' ₽</div>';  } else {  } ?>
+    <a href="tel:+79256321506" class="button button--secondary button--size-xl">
+      Позвонить и заказать
+    </a>
+
+    <h3>Гарантия</h3>
+    <p>6&nbsp;месяцев. Срок эксплуатации после полугода ограничивается состоянием самой пневматической подвески. При её&nbsp;целостности и&nbsp;исправности компрессор исправно проработает 2-3&nbsp;года.</p>
 
     <h3 class="how-to-buy">Номер запчасти</h3>
     <?php $number = get_field( "number" );
     if ( $number ) { echo '<div class="detail-numbers">'.get_post_meta( get_the_ID(), "number", true).'</div>';  } else {  } ?>
 
-    <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
-    <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
-
-    <h3>Гарантия</h3>
-    <p>6&nbsp;месяцев. Срок эксплуатации после полугода ограничивается состоянием самой пневматической подвески. При её&nbsp;целостности и&nbsp;исправности компрессор исправно проработает 2-3&nbsp;года.</p>
   </div>
 
 
   <div class="half">
-    <div class="gallery fotorama" data-nav="thumbs" data-allowfullscreen="true">
+    <div class="gallery fotorama" data-nav="thumbs" data-maxheight="600" data-allowfullscreen="true">
       <?php
       $images = get_field('photos');
       if( $images ):
@@ -61,6 +69,17 @@ echo ' ₽';
     </div>
   </div>
 
+</section>
+
+<section class="container section--border">
+    <?php
+      if ( $description ) { echo '<h3>Доставка и оплата</h3><p class="description" itemprop="description">'.get_post_meta( get_the_ID(), "description", true).'</p>';  } else {
+        echo '<meta itemprop="description" content="Купить запчасть '.get_the_title().' для Мерседес на разборке в Москве и в России">';
+      }
+    ?>
+    <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
+    <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=false"></script>
 </section>
 
 <?php get_footer(); ?>
