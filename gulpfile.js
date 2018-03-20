@@ -1,33 +1,33 @@
 const gulp = require('gulp'),
-	path = require('path'),
-	less = require('gulp-less'),
-	autoPrefixer = require('autoprefixer'),
-	minify = require('cssnano'),
-	sourceMaps = require('gulp-sourcemaps'),
-	concat = require('gulp-concat'),
-	plumber = require('gulp-plumber'),
-	notify = require('gulp-notify'),
-	cache = require('gulp-cache'),
-	util = require('gulp-util'),
-	uglify = require('gulp-uglify'),
-	postCss = require('gulp-postcss'),
-	imageMin = require('imagemin'),
-	imgRetina = require('gulp-img-retina');
-(browserSync = require('browser-sync').create()), (rollup = require('gulp-rollup')), (babel = require('rollup-plugin-babel')), (useref = require('gulp-useref')), (runSequence = require('run-sequence')), (webpack = require('webpack-stream')), (del = require('del')), (argv = require('minimist')(
-	process.argv
-));
-gulpif = require('gulp-if');
-prompt = require('gulp-prompt');
-rsync = require('gulp-rsync');
-join = path.join;
+			path = require('path'),
+			less = require('gulp-less'),
+			autoPrefixer = require('autoprefixer'),
+			minify = require('cssnano'),
+			sourceMaps = require('gulp-sourcemaps'),
+			concat = require('gulp-concat'),
+			plumber = require('gulp-plumber'),
+			notify = require('gulp-notify'),
+			cache = require('gulp-cache'),
+			util = require('gulp-util'),
+			uglify = require('gulp-uglify'),
+			postCss = require('gulp-postcss'),
+			imageMin = require('imagemin'),
+			imgRetina = require('gulp-img-retina');
+			(browserSync = require('browser-sync').create()), (rollup = require('gulp-rollup')), (babel = require('rollup-plugin-babel')), (useref = require('gulp-useref')), (runSequence = require('run-sequence')), (webpack = require('webpack-stream')), (del = require('del')), (argv = require('minimist')(
+				process.argv
+			));
+			gulpif = require('gulp-if');
+			prompt = require('gulp-prompt');
+			rsync = require('gulp-rsync');
+			join = path.join;
 
 const DEST = 'wp-content/themes/simareeno',
-	SRC = 'src',
-	RESOURCES = 'resources',
-	TEMPLATES = join(SRC, 'templates'),
-	STYLES = join(SRC, 'styles'),
-	SCRIPTS = join(SRC, 'scripts');
-IMAGES = join(SRC, 'images');
+			SRC = 'src',
+			RESOURCES = 'resources',
+			TEMPLATES = join(SRC, 'templates'),
+			STYLES = join(SRC, 'styles'),
+			SCRIPTS = join(SRC, 'scripts');
+			IMAGES = join(SRC, 'images');
 
 let production = !!util.env.production;
 

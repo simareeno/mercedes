@@ -47,7 +47,7 @@ echo ' ₽';
     </div>
 
       <a href="tel:+79256321506" class="button button--secondary button--size-xl">
-        Позвонить и заказать
+        +7 925 632 15 06
       </a>
 
       <?php
