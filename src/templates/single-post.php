@@ -77,13 +77,13 @@ echo ' ₽';
 
 <section class="container section--border">
     <?php
-      if ( $description ) { echo '<h3>Доставка и оплата</h3><p class="description" itemprop="description">'.get_post_meta( get_the_ID(), "description", true).'</p>';  } else {
+      if ( $description ) { echo '<h3>Описание товара</h3><p class="description" itemprop="description">'.get_post_meta( get_the_ID(), "description", true).'</p>';  } else {
         echo '<meta itemprop="description" content="Купить запчасть '.get_the_title().' для Мерседес на разборке в Москве и в России">';
       }
     ?>
     <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
     <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=false"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 </section>
 
 </div>

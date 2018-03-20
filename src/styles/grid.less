@@ -1,26 +1,17 @@
 @mobile: ~"only screen and (min-width: 320px) ";
 @tablet: ~"only screen and (min-width: 768px) ";
 @desktop: ~"only screen and (min-width: 960px) ";
-@desktop-huge: ~"only screen and (min-width: 1360px) ";
 
-@columnS: 68px;
-@gutterS: 12px;
-@sideMarginS: 12px;
+@column: 68px;
+@gutter: 12px;
+@sideMargin: 12px;
 
-@columnBig: 90px;
-@gutterBig: 24px;
-@sideMarginBig: 24px;
-
-.gutters (@gutter: @grid-gutter-width) {
+.gutter (@gutter: @grid-gutter-width) {
   padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
 }
 
-.columnS (@n; @gutter: @gutterS; @column: @columnS) {
-  width: (@column * @n) + (@gutter * @n);
-}
-
-.columnBig (@n; @gutter: @gutterBig; @column: @columnBig) {
+.column (@n; @gutter: @gutter; @column: @column) {
   width: (@column * @n) + (@gutter * @n);
 }
 
@@ -28,10 +19,6 @@
   width: 100%;
 
   @media @desktop {
-    .columnS(6);
-  }
-
-  @media @desktop-huge {
-    .columnBig(6);
+    .column(6);
   }
 }
