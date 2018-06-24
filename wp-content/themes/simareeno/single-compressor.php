@@ -79,7 +79,7 @@ echo ' ₽';
     ?>
     <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
     <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2f20c712d1c4b04564b752a9c7bed9acff25cbe00f398d22be83390c74f9c72f&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=false"></script>
 </section>
 
 <?php get_footer(); ?>

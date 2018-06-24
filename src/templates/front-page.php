@@ -7,10 +7,10 @@
 <section class="front-banner">
   <div class="container">
   <div class="front-banner__title">
-  <img src="/resources/images/front-title.png" alt="Дешевые запчасти и сервис  для вашего Mercedes-Benz" srcset="/resources/images/front-title.png 1x, /resources/images/front-title@2x.png 2x, /resources/images/front-title@3x.png 3x">
+  <img src="/resources/images/front-title.png" alt="Дешевые запчасти и сервис для вашего Mercedes-Benz" srcset="/resources/images/front-title.png 1x, /resources/images/front-title@2x.png 2x, /resources/images/front-title@3x.png 3x">
   </div>
   <div class="front-banner__image">
-  <img src="/resources/images/black-mercedes.jpg" alt="Дешевые запчасти и сервис  для вашего Mercedes-Benz">
+  <img src="/resources/images/black-mercedes.jpg" alt="Дешевые запчасти и сервис для вашего Mercedes-Benz">
   </div>
   <div class="front-banner__background"></div>
   </div>
@@ -61,7 +61,7 @@
         <div class="list__item">
           <div class="list__item-icon list__item-icon--pin"></div>
           <h3 class="h3 list__item-title">Мастерская и&nbsp;склад</h3>
-          <div class="list__item-description">Алтуфьевское шоссе, 79д </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
+          <div class="list__item-description">Алтуфьевское шоссе, 37, строение 33 </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
         </div>
 
         <div class="list__item">

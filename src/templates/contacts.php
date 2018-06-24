@@ -36,12 +36,12 @@ Template Name: Contacts
         <div class="list__item">
           <div class="list__item-icon list__item-icon--pin"></div>
           <h2 class="list__item-title h2">Мастерская и&nbsp;склад</h2>
-          <div class="list__item-description">Алтуфьевское шоссе, 79д </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00
+          <div class="list__item-description">Алтуфьевское шоссе, 37, строение 33 </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00
 
 						<div class="ul-title">Услуги</div>
 						<ul class="ul">
 							<li class="li">Самовывоз запчастей</li>
-							<li class="li">Диагностика  и&nbsp;калибровка Мерседес</li>
+							<li class="li">Диагностика и&nbsp;калибровка Мерседес</li>
 							<li class="li">Замена компрессоров пневмоподвески на&nbsp;любой авто</li>
 						</ul>
 					</div>

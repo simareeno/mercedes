@@ -83,9 +83,36 @@ echo ' ₽';
     ?>
     <h3 class="how-to-buy"><a href="/dostavka-i-oplata">Доставка и оплата</a></h3>
     <p>По Москве — 390 ₽</br> По России — 400 ₽</br> Самовывоз — бесплатно</p>
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2f20c712d1c4b04564b752a9c7bed9acff25cbe00f398d22be83390c74f9c72f&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
 </section>
 
+<section class="pickup">
+  <div class="container">
+
+    <div class="list">
+      <div class="list__item">
+        <div class="list__item-icon list__item-icon--pin"></div>
+        <h3 class="h3 list__item-title">Пункт самовывоза</h3>
+        <div class="list__item-description">м. Тропарёво, Академика Варги, 28. пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 20:00</div>
+      </div>
+    </div>
+
+    <div class="pickup__map map">
+      <div class="map__desktop">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;width=100%&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+      </div>
+      <a class="map__touch" href="https://yandex.ru/maps/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;height=350&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="call">
+  <div class="container">
+  <h3 class="call__phone">
+      <a href="tel:+79256321506">+7 925 632 15 06</a>
+  </h3>
+  <div class="call__desc">Мы работаем каждый день, с&nbsp;10:00&nbsp;до&nbsp;20:00</div>
 </div>
+</section>
 
 <?php get_footer(); ?>
