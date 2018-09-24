@@ -44,17 +44,17 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	jQuery = __webpack_require__(1);
+	jQuery = __webpack_require__(1)
 
 	jQuery(function() {
-	  const Fotorama = __webpack_require__(2);
+	  const Fotorama = __webpack_require__(2)
 
-	  jQuery(".navigation__icon").click(function() {
-	    jQuery(".navigation__list").toggleClass("navigation__list--active");
-	    jQuery("body").toggleClass("body--fixed");
-	    jQuery(this).toggleClass("navigation__icon--active");
-	  });
-	});
+	  jQuery('.navigation__icon').click(function() {
+	    jQuery('.navigation__list').toggleClass('navigation__list--active')
+	    jQuery('body').toggleClass('body--fixed')
+	    jQuery(this).toggleClass('navigation__icon--active')
+	  })
+	})
 
 
 /***/ }),

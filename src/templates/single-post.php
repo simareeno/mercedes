@@ -91,16 +91,15 @@ echo ' ₽';
     <div class="list">
       <div class="list__item">
         <div class="list__item-icon list__item-icon--pin"></div>
-        <h3 class="h3 list__item-title">Пункт самовывоза</h3>
-        <div class="list__item-description">м. Тропарёво, Академика Варги, 28. пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 20:00</div>
+        <div class="list__item-description">Алтуфьевское шоссе, 37, строение 33 </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
       </div>
     </div>
 
     <div class="pickup__map map">
       <div class="map__desktop">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;width=100%&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=false"></script>
       </div>
-      <a class="map__touch" href="https://yandex.ru/maps/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2190867961162972bfd8445bbf5779fb04ac4094f736e1edaab2a5375a376c48&amp;height=350&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+      <a class="map__touch" href="https://yandex.ru/maps/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A686c5baba94108e8f8e1ade7ee358895cd199a98a52f4e654a24e1347f1ce224&amp;height=350&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
     </div>
 
   </div>

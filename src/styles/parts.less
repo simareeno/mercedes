@@ -54,7 +54,7 @@
       overflow: hidden;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         width: 30px;
@@ -96,7 +96,7 @@
   }
 
   &:after {
-    content: "/";
+    content: '/';
     margin-left: @unit;
     opacity: 0.25;
   }
@@ -109,7 +109,7 @@
     }
 
     &:after {
-      content: "";
+      content: '';
     }
   }
 }
@@ -192,7 +192,7 @@
   &--from:before {
     font-size: @font-size-m;
     font-size: @line-height-m;
-    content: "от ";
+    content: 'от ';
     position: relative;
     bottom: 3px;
   }
@@ -200,12 +200,7 @@
 
 .price-block {
   display: flex;
-  align-items: center;
   flex-direction: column;
-
-  @media @desktop {
-    flex-direction: row;
-  }
 }
 
 .price-description {
@@ -214,11 +209,6 @@
   line-height: @line-height-m;
   opacity: 0.5;
   margin-top: @unit;
-
-  @media @desktop {
-    margin-top: 0;
-    max-width: 200px;
-  }
 }
 
 .detail-numbers {
@@ -228,7 +218,7 @@
   margin-bottom: @unit;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     background: -moz-linear-gradient(
       top,

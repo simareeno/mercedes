@@ -35,8 +35,8 @@
   <div class="container">
     <h1 class="h2"><a href="/zapchasti/">Запчасти Мерседес</a></h1>
     <div class="seo-text">
-    <p>Самое главное в&nbsp;подборе и&nbsp;покупке новой или б/у запчасти&nbsp;&mdash; диагностика автомобиля. У&nbsp;нас вы&nbsp;можете сделать компьютерную диагностику дилерским сканером &laquo;Star Diagnosis&raquo;. А&nbsp;потом приобрести любые запчасти для Мерседес. Мы&nbsp;разбираем автомобили привезенные из&nbsp;Европы, ОАЭ и&nbsp;РФ.</p>
-    <p>В&nbsp;нашем каталоге запчастей вы&nbsp;можете посмотреть примерные цены на&nbsp;запчасти. Если вы&nbsp;не&nbsp;нашли чего искали&nbsp;&mdash; звоните, мы&nbsp;найдём нужную деталь.</p>
+    <p>Самое главное в&nbsp;подборе и&nbsp;покупке б/у запчасти&nbsp;&mdash; диагностика автомобиля. У&nbsp;нас вы&nbsp;можете сделать компьютерную диагностику дилерским сканером &laquo;Star Diagnosis&raquo;. А&nbsp;потом приобрести любые запчасти для Мерседес. Мы&nbsp;разбираем автомобили привезенные из&nbsp;Европы, ОАЭ и&nbsp;РФ.</p>
+    <p>В&nbsp;нашем каталоге запчастей вы&nbsp;можете посмотреть примерные цены на&nbsp;запчасти. Если вы&nbsp;не&nbsp;нашли чего искали&nbsp;&mdash; звоните, мы&nbsp;найдём нужную деталь. Мы занимаемся только б/у и восстановленными запчастями.</p>
     <h3><a href="/kompressori/">Компрессоры</a></h3>
     <p>Мы&nbsp;профессионально восстанавливаем компрессоры на&nbsp;все марки авто на&nbsp;специальном оборудовании. По&nbsp;характеристикам компрессоры равны новым.</p>
     <h3><a href="/dostavka-i-oplata/">Доставка</a></h3>
@@ -64,19 +64,6 @@
           <div class="list__item-description">Алтуфьевское шоссе, 37, строение 33 </br>пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
         </div>
 
-        <div class="list__item">
-          <div class="list__item-icon list__item-icon--pin"></div>
-          <h3 class="h3 list__item-title">Сервис в&nbsp;Солнцево</h3>
-          <div class="list__item-description">Производственная ул., 23&nbsp;стр.10</br>
-    пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
-        </div>
-
-        <div class="list__item">
-          <div class="list__item-icon list__item-icon--pin"></div>
-          <h3 class="h3 list__item-title">Сервис в&nbsp;Балашихе</h3>
-          <div class="list__item-description">Шоссе энтузиастов, владение 8а</br>
-    пн. &mdash;&nbsp;сб., 10:00&nbsp;&mdash; 19:00</div>
-        </div>
       </div>
       <div class="contacts__map">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aac436a37a1ba5398940f8b0af4a4df8a34bcc03ed335dea44dd6de2ea1b63369&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
